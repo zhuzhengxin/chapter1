@@ -62,7 +62,7 @@
         <module>config-server</module>
         <module>config-client</module>
         <module>server-zipkin</module>
-        <module>config-client</module>
+        <module>service-miya</module>
     </modules>
 
 </project>

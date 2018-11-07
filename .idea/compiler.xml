@@ -14,6 +14,7 @@
         <module name="service-hi" />
         <module name="service-ribbon" />
         <module name="service-zuul" />
+        <module name="service2-zipkin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -26,6 +27,7 @@
       <module name="service-hi" target="1.8" />
       <module name="service-ribbon" target="1.8" />
       <module name="service-zuul" target="1.8" />
+      <module name="service2-zipkin" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
