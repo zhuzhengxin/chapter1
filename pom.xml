@@ -61,6 +61,8 @@
         <module>service-zuul</module>
         <module>config-server</module>
         <module>config-client</module>
+        <module>server-zipkin</module>
+        <module>config-client</module>
     </modules>
 
 </project>
