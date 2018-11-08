@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.sid.model:service-hi:unknown">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sid/model/service-hi/unknown/service-hi-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sid/model/service-hi/unknown/service-hi-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sid/model/service-hi/unknown/service-hi-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

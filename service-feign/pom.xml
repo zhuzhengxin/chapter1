@@ -29,6 +29,15 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.sid.model</groupId>
+			<artifactId>service-hi</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.forezp</groupId>
+			<artifactId>service-hi</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 </project>
