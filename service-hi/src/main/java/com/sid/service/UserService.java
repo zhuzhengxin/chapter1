@@ -3,16 +3,16 @@ package com.sid.service;
 import com.sid.model.User;
 
 public interface UserService {
-    int deleteByPrimaryKey(Long id);
+    void deleteByPrimaryKey(Long id);
 
-    int insert(User record);
+    void insert(User record);
 
-    int insertSelective(User record);
+    void insertSelective(User record);
 
     User selectByPrimaryKey(Long id);
 
-    int updateByPrimaryKeySelective(User record);
+    void updateByPrimaryKeySelective(User record);
 
-    int updateByPrimaryKey(User record);
+    void updateByPrimaryKey(User record);
 
 }
