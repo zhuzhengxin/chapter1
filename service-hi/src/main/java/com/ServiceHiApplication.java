@@ -35,7 +35,7 @@ public class ServiceHiApplication {
 		return new RestTemplate();
 	}
 
-	@RequestMapping("/hi")
+	@RequestMapping("/hiii")
 	public String callHome(){
 		LOG.log(Level.INFO, "calling trace service-hi  ");
 		return restTemplate.getForObject("http://localhost:8989/miya", String.class);
