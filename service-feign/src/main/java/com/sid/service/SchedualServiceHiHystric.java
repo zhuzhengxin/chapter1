@@ -1,6 +1,5 @@
 package com.sid.service;
 
-import com.sid.model.User;
 import org.springframework.stereotype.Component;
 
 @Component

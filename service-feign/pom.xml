@@ -29,10 +29,10 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
-		<dependency>
+<!--		<dependency>
 			<groupId>com.sid.model</groupId>
 			<artifactId>service-hi</artifactId>
-		</dependency>
+		</dependency>-->
 		<dependency>
 			<groupId>com.forezp</groupId>
 			<artifactId>service-hi</artifactId>
