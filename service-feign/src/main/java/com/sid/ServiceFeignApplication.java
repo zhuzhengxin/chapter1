@@ -1,5 +1,6 @@
 package com.sid;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
@@ -11,6 +12,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableEurekaClient
 @EnableDiscoveryClient
 @EnableFeignClients   //Feign 里已经包含了 hystrix（断路器） 、负载均衡的restRemplate
+@MapperScan("com.sid.mapper")//将项目中对应的mapper类的路径加进来就可以了
 //@EnableCircuitBreaker //开启 熔断
 public class ServiceFeignApplication {
 

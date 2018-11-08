@@ -24,7 +24,7 @@ public class ServiceHiApplication {
 		SpringApplication.run(ServiceHiApplication.class, args);
 	}
 
-	private static final Logger LOG = Logger.getLogger(ServiceHiApplication.class.getName());
+/*	private static final Logger LOG = Logger.getLogger(ServiceHiApplication.class.getName());
 
 
 	@Autowired
@@ -51,6 +51,6 @@ public class ServiceHiApplication {
 	@Bean
 	public Sampler defaultSampler() {
 		return Sampler.ALWAYS_SAMPLE;
-	}
+	}*/
 
 }

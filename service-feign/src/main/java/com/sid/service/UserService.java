@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * Created by fangzhipeng on 2017/4/6.
  */
 @FeignClient(value = "service-hi" ,fallback = SchedualServiceHiHystric.class)
-public interface SchedualServiceHi {
+public interface UserService {
     @RequestMapping(value = "/hi",method = RequestMethod.POST)
-    String sayHiFromClientOne(@RequestBody User user);
+    void insert(@RequestBody User user);
 }

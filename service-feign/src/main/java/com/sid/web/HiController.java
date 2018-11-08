@@ -1,9 +1,12 @@
 package com.sid.web;
 
 import com.sid.model.User;
-import com.sid.service.SchedualServiceHi;
+import com.sid.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Created by fangzhipeng on 2017/4/6.
@@ -12,10 +15,10 @@ import org.springframework.web.bind.annotation.*;
 public class HiController {
 
     @Autowired
-    SchedualServiceHi schedualServiceHi;
+    UserService userService;
 
-    @RequestMapping(value = "/hi",method = RequestMethod.GET)
-    public String sayHi(@RequestBody User user){
-        return schedualServiceHi.sayHiFromClientOne(user);
+    @RequestMapping(value = "/hi",method = RequestMethod.POST)
+    public void sayHi(@RequestBody User user){
+         userService.insert(user);
     }
 }
