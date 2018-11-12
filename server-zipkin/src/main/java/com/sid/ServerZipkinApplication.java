@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import zipkin.server.EnableZipkinServer;
 
 @SpringBootApplication
-//@EnableEurekaClient
 @EnableZipkinServer
 public class ServerZipkinApplication {
 

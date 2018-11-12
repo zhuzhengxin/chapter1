@@ -1,5 +1,7 @@
 package com.sid.web;
 
+import com.sid.model.User;
+import com.sid.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

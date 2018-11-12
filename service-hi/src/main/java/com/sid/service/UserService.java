@@ -1,10 +1,9 @@
-package com.sid.mapper;
+package com.sid.service;
 
 import com.sid.model.User;
-import org.apache.ibatis.annotations.Mapper;
 
-@Mapper
-public interface UserMapper {
+public interface UserService {
+
     int deleteByPrimaryKey(Long id);
 
     int insert(User record);
@@ -16,4 +15,5 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
 }
