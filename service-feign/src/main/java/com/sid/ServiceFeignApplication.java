@@ -12,7 +12,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableEurekaClient
 @EnableDiscoveryClient
 @EnableFeignClients   //Feign 里已经包含了 hystrix（断路器） 、负载均衡的restRemplate
-@MapperScan("com.sid.mapper")//将项目中对应的mapper类的路径加进来就可以了
+@MapperScan("com.sid.demo.dao")//将项目中对应的mapper类的路径加进来就可以了
 //@EnableCircuitBreaker //开启 熔断
 public class ServiceFeignApplication {
 

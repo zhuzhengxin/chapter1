@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-@RestController
+//@RestController
 //@RequestMapping("/u")
 public class Usercontroller {
 
@@ -24,6 +24,8 @@ public class Usercontroller {
 
     @Autowired
     protected RedisTemplate redisTemplate;
+    @Autowired
+    private RedisTemplate<String, String> redisTemplat;
 
     @Autowired
     private AmqpTemplate rabbitTemplate;
