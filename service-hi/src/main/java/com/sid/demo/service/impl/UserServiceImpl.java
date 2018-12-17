@@ -1,12 +1,11 @@
 package com.sid.demo.service.impl;
 
-import com.sid.demo.entity.User;
+import com.common.entity.User;
 import com.sid.demo.dao.UserDao;
 import com.sid.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**

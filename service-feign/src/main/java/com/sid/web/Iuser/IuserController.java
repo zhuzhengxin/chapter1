@@ -1,11 +1,11 @@
-package com.sid.web;
+package com.sid.web.Iuser;
 
-import com.sid.demo.entity.User;
+import com.common.entity.User;
 import com.sid.feign.UserFeign;
 import com.sid.service.UsersService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,8 +15,9 @@ import java.util.List;
  * Created by fangzhipeng on 2017/4/6.
  */
 @RestController
-//@RequestMapping("/user")
-public class HiController {
+@RequestMapping("/iuser")
+@Api(value = "/collectivePlan",description = "zhuzhuzhuz")
+public class IuserController {
 
     @Autowired
     UsersService userService;
@@ -58,8 +59,8 @@ public class HiController {
     //@RequestMapping(value = "/insert",method = RequestMethod.POST)
     @PostMapping(value = "/insert")
     @ApiOperation(value = "新增用户", notes = "返回响应对象")
-    public void insert( @ApiParam(value = "用户对象", required = true) @RequestBody User user){
-        userService.insert(user);
+    public User insert( @ApiParam(value = "用户对象", required = true) @RequestBody User user){
+        return userService.insert(user);
     }
 
 

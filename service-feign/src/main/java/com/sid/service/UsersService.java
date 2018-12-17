@@ -1,6 +1,6 @@
 package com.sid.service;
 
-import com.sid.demo.entity.User;
+import com.common.entity.User;
 import com.sid.feign.UserFeign;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,8 +43,7 @@ public class UsersService {
      * @return 实例对象
      */
     public User insert(User user) {
-        userFeign.insert(user);
-        return user;
+        return  userFeign.insert(user);
     }
 
     /**

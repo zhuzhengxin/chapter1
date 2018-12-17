@@ -1,6 +1,6 @@
 package com.sid.demo.service;
 
-import com.sid.demo.entity.User;
+import com.common.entity.User;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

@@ -25,17 +25,39 @@ public class Swagger2 {
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("小猪2号")
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.sid.web"))
+                .apis(RequestHandlerSelectors.basePackage("com.sid.web.UserController"))
                 .paths(PathSelectors.any())
                 .build();
     }
- 
+   @Bean
+    public Docket Iuser() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("小猪")
+                .apiInfo(Iuserz())
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.sid.web.Iuser"))
+                .paths(PathSelectors.any())
+                .build();
+    }
+
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("测试")
-                .description("--------------------------------")
+                .description("-------------------")
+                //.termsOfServiceUrl("https://blog.csdn.net/ityqing")
+                //.contact("刘圈圈")
+                .version("0.1.1")
+                .build();
+    }
+
+
+    private ApiInfo Iuserz() {
+        return new ApiInfoBuilder()
+                .title("朱")
+                .description("-------------------")
                 //.termsOfServiceUrl("https://blog.csdn.net/ityqing")
                 //.contact("刘圈圈")
                 .version("0.1.1")

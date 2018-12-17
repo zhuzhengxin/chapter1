@@ -1,6 +1,6 @@
  package com.sid.feign;
 
- import com.sid.demo.entity.User;
+ import com.common.entity.User;
  import org.springframework.cloud.openfeign.FeignClient;
  import org.springframework.web.bind.annotation.GetMapping;
  import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +15,7 @@
 public interface UserFeign {
     //@RequestMapping(value = "/insert",method = RequestMethod.POST)
     @PostMapping(value = "/insert")
-    void insert(User user);
+    User insert(User user);
     @GetMapping(value = "/queryById/{id}")
     //@GetMapping(value="/queryById", method = RequestMethod.GET)
     User queryById(@PathVariable("id")Long id);

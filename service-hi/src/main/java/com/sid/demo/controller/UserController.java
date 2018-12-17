@@ -1,11 +1,10 @@
 package com.sid.demo.controller;
 
-import com.sid.demo.entity.User;
+import com.common.entity.User;
 import com.sid.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
