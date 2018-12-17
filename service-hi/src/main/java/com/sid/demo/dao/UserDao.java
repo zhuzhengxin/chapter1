@@ -1,6 +1,7 @@
 package com.sid.demo.dao;
 
 import com.sid.demo.entity.User;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -12,7 +13,8 @@ import java.util.List;
  * @author makejava
  * @since 2018-11-12 11:30:45
  */
-@Repository
+//@Repository
+@Mapper
 public interface UserDao {
 
     /**
@@ -47,7 +49,7 @@ public interface UserDao {
      * @param user 实例对象
      * @return 影响行数
      */
-    int insert(User user);
+    int add(User user);
 
     /**
      * 修改数据

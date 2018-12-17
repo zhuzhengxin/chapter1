@@ -2,6 +2,7 @@ package com.sid.demo.controller;
 
 import com.sid.demo.entity.User;
 import com.sid.demo.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -19,7 +20,7 @@ public class UserController {
     /**
      * 服务对象
      */
-    @Resource
+    @Autowired
     private UserService userService;
 
     /**
@@ -28,9 +29,21 @@ public class UserController {
      * @param id 主键
      * @return 单条数据
      */
-    @GetMapping("selectOne")
-    public User selectOne(Long id) {
+    @GetMapping("queryById/{id}")
+    public User selectOne(@PathVariable Long id) {
         return this.userService.queryById(id);
+    }
+
+
+    /**
+     * 通过用户对象查询对象集合
+     *
+     * @param
+     * @return 对象集合
+     */
+    @GetMapping("queryAllByLimit")
+    public List<User> queryAllByLimit(int offset, int limit) {
+        return userService.queryAllByLimit( offset,  limit);
     }
 
     /**
@@ -40,8 +53,8 @@ public class UserController {
      * @return 对象集合
      */
     @GetMapping("queryAll")
-    public List<User> queryAll(User user) {
-        return this.userService.queryAll(user);
+    public List<User> queryAll(@RequestBody User user) {
+        return userService.queryAll(user);
     }
 
     /**
@@ -51,8 +64,8 @@ public class UserController {
      * @return 新增数据
      */
     @PostMapping("insert")
-    public User insert(User user) {
-        return this.userService.insert(user);
+    public User insert( @RequestBody User user) {
+        return userService.insert(user);
     }
 
     /**

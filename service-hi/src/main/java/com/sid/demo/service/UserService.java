@@ -1,6 +1,8 @@
 package com.sid.demo.service;
 
 import com.sid.demo.entity.User;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 /**
@@ -17,7 +19,7 @@ public interface UserService {
      * @param id 主键
      * @return 实例对象
      */
-    User queryById(Long id);
+    User queryById( @Param("id") Long id);
 
     /**
      * 查询多条数据

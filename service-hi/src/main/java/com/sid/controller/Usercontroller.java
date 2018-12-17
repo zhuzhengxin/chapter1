@@ -1,26 +1,23 @@
 
 package com.sid.controller;
 
-import com.sid.model.User;
-import com.sid.service.UserService;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
-import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
 
 //@RestController
 //@RequestMapping("/u")
 public class Usercontroller {
 
     private static final Logger logger = Logger.getLogger(Usercontroller.class.getName());
-    @Autowired
-    private UserService userService;
+
 
     @Autowired
     protected RedisTemplate redisTemplate;
@@ -31,11 +28,6 @@ public class Usercontroller {
     private AmqpTemplate rabbitTemplate;
 
 
-    @RequestMapping(value = "/user", method = RequestMethod.POST)
-
-    public void home(@ModelAttribute User user, HttpServletRequest request) throws IOException {
-        userService.insert(user);
-    }
 
 
     @RequestMapping("/hu")

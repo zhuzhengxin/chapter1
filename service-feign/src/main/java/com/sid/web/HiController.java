@@ -1,24 +1,65 @@
 package com.sid.web;
 
-import com.sid.model.User;
-import com.sid.service.UserService;
+import com.sid.demo.entity.User;
+import com.sid.feign.UserFeign;
+import com.sid.service.UsersService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by fangzhipeng on 2017/4/6.
  */
 @RestController
+//@RequestMapping("/user")
 public class HiController {
 
     @Autowired
-    UserService userService;
+    UsersService userService;
 
-    @RequestMapping(value = "/hi",method = RequestMethod.POST)
-    public void sayHi(@RequestBody User user){
-         userService.insert(user);
+    @Autowired
+    private UserFeign userFeign;
+
+    @GetMapping(value="/queryById/{id}")
+    //@ApiOperation(value = "通过id查询用户", notes = "返回响应对象")
+    public void queryById(@PathVariable Long id){
+        userFeign.queryById(id);
     }
+
+/*   @GetMapping(value = "/queryAllByLimit")
+    @ApiOperation(value = "查询多条数据(起始位置)", notes = "返回响应对象")
+    public void queryAllByLimit(@ApiParam(value = "开始位置，结束位置", required = true)  @Param("offset") int offset, @Param("limit") int limit){
+        userService.queryAllByLimit(offset,limit);
+    }*/
+
+    @PostMapping(value = "/queryAll")
+    @ApiOperation(value = "查询多条数据", notes = "返回响应对象")
+    public void queryAll(@ApiParam(value = "用户对象", required = true) @RequestBody User user){
+        userFeign.queryAll(user);
+    }
+
+
+    @PostMapping(value = "/update")
+    @ApiOperation(value = "修改用户", notes = "返回响应对象")
+    public void update( @ApiParam(value = "用户对象", required = true) @RequestBody User user){
+        userFeign.update(user);
+    }
+
+    @GetMapping(value = "/deleteById")
+    @ApiOperation(value = "根据用户id删除", notes = "返回响应对象")
+    public void deleteById( @ApiParam(value = "用户id", required = true) Long id){
+        userFeign.deleteById(id);
+    }
+
+    //@RequestMapping(value = "/insert",method = RequestMethod.POST)
+    @PostMapping(value = "/insert")
+    @ApiOperation(value = "新增用户", notes = "返回响应对象")
+    public void insert( @ApiParam(value = "用户对象", required = true) @RequestBody User user){
+        userService.insert(user);
+    }
+
+
+
 }
