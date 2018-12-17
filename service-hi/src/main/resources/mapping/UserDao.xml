@@ -3,7 +3,7 @@
 <mapper namespace="com.sid.demo.dao.UserDao">
 
     <resultMap type="com.sid.demo.entity.User" id="UserMap">
-        <result property="id" column="id" jdbcType="LONG INTEGER"/>
+        <result property="id" column="id" jdbcType="NUMERIC"/>
         <result property="name" column="name" jdbcType="VARCHAR"/>
         <result property="password" column="password" jdbcType="VARCHAR"/>
         <result property="mobilePhone" column="mobile_phone" jdbcType="VARCHAR"/>

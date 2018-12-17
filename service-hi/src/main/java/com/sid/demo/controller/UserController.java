@@ -31,7 +31,7 @@ public class UserController {
      */
     @GetMapping("queryById/{id}")
     public User selectOne(@PathVariable Long id) {
-        return this.userService.queryById(id);
+        return userService.queryById(id);
     }
 
 
@@ -52,7 +52,7 @@ public class UserController {
      * @param user 用户对象
      * @return 对象集合
      */
-    @GetMapping("queryAll")
+    @PostMapping("queryAll")
     public List<User> queryAll(@RequestBody User user) {
         return userService.queryAll(user);
     }

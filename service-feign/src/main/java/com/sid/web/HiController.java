@@ -9,6 +9,8 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * Created by fangzhipeng on 2017/4/6.
  */
@@ -24,8 +26,8 @@ public class HiController {
 
     @GetMapping(value="/queryById/{id}")
     //@ApiOperation(value = "通过id查询用户", notes = "返回响应对象")
-    public void queryById(@PathVariable Long id){
-        userFeign.queryById(id);
+    public User queryById(@PathVariable Long id){
+        return userFeign.queryById(id);
     }
 
 /*   @GetMapping(value = "/queryAllByLimit")
@@ -36,8 +38,8 @@ public class HiController {
 
     @PostMapping(value = "/queryAll")
     @ApiOperation(value = "查询多条数据", notes = "返回响应对象")
-    public void queryAll(@ApiParam(value = "用户对象", required = true) @RequestBody User user){
-        userFeign.queryAll(user);
+    public List<User> queryAll(@ApiParam(value = "用户对象", required = true) @RequestBody User user){
+        return userFeign.queryAll(user);
     }
 
 
