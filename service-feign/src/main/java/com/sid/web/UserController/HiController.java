@@ -26,16 +26,16 @@ public class HiController {
     private UserFeign userFeign;
 
     @GetMapping(value="/queryById/{id}")
-    //@ApiOperation(value = "通过id查询用户", notes = "返回响应对象")
+    @ApiOperation(value = "通过id查询用户", notes = "返回响应对象")
     public User queryById(@PathVariable Long id){
         return userFeign.queryById(id);
     }
 
-/*   @GetMapping(value = "/queryAllByLimit")
+   @GetMapping(value = "/queryAllByLimit")
     @ApiOperation(value = "查询多条数据(起始位置)", notes = "返回响应对象")
-    public void queryAllByLimit(@ApiParam(value = "开始位置，结束位置", required = true)  @Param("offset") int offset, @Param("limit") int limit){
-        userService.queryAllByLimit(offset,limit);
-    }*/
+    public List<User> queryAllByLimit(@ApiParam(value = "开始位置，结束位置", required = true)  @RequestParam("offset") int offset, @RequestParam("limit") int limit){
+       return userService.queryAllByLimit(offset,limit);
+    }
 
     @PostMapping(value = "/queryAll")
     @ApiOperation(value = "查询多条数据", notes = "返回响应对象")

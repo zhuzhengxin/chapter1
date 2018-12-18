@@ -5,6 +5,7 @@
  import org.springframework.web.bind.annotation.GetMapping;
  import org.springframework.web.bind.annotation.PathVariable;
  import org.springframework.web.bind.annotation.PostMapping;
+ import org.springframework.web.bind.annotation.RequestParam;
 
  import java.util.List;
 
@@ -19,8 +20,8 @@ public interface UserFeign {
     @GetMapping(value = "/queryById/{id}")
     //@GetMapping(value="/queryById", method = RequestMethod.GET)
     User queryById(@PathVariable("id")Long id);
-/*   @GetMapping(value = "/queryAllByLimit")
-   List<User> queryAllByLimit( int offset, int limit);*/
+   @GetMapping(value = "/queryAllByLimit")
+   List<User> queryAllByLimit(@RequestParam("offset")int offset,  @RequestParam("limit") int limit);
     @PostMapping(value = "/queryAll")
     List<User> queryAll(User user);
     @PostMapping(value = "/update")

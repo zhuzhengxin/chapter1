@@ -28,9 +28,9 @@ public class UsersService {
      *
      * @return 对象列表
      */
-/*    public List<User> queryAllByLimit(int offset, int limit) {
+    public List<User> queryAllByLimit(int offset, int limit) {
         return userFeign.queryAllByLimit(offset, limit);
-    }*/
+    }
 
     public List<User> queryAll(User user) {
         return userFeign.queryAll(user);

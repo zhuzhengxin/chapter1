@@ -41,7 +41,7 @@ public class UserController {
      * @return 对象集合
      */
     @GetMapping("queryAllByLimit")
-    public List<User> queryAllByLimit(int offset, int limit) {
+    public List<User> queryAllByLimit(@RequestParam("offset")int offset, @RequestParam("limit")int limit) {
         return userService.queryAllByLimit( offset,  limit);
     }
 
