@@ -14,14 +14,12 @@
  */
 @FeignClient(value = "service-hi",path = "/user")//,fallback = SchedualServiceHiHystric.class)
 public interface UserFeign {
-    //@RequestMapping(value = "/insert",method = RequestMethod.POST)
     @PostMapping(value = "/insert")
     User insert(User user);
     @GetMapping(value = "/queryById/{id}")
-    //@GetMapping(value="/queryById", method = RequestMethod.GET)
     User queryById(@PathVariable("id")Long id);
-   @GetMapping(value = "/queryAllByLimit")
-   List<User> queryAllByLimit(@RequestParam("offset")int offset,  @RequestParam("limit") int limit);
+    @GetMapping(value = "/queryAllByLimit")
+    List<User> queryAllByLimit(@RequestParam("offset")int offset,  @RequestParam("limit") int limit);
     @PostMapping(value = "/queryAll")
     List<User> queryAll(User user);
     @PostMapping(value = "/update")
